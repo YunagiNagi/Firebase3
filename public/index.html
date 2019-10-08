@@ -34,7 +34,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Link</a>
@@ -61,9 +61,9 @@
       </div>
     </nav>
 
-    <div class="row justify-content-center">
+    <div class="row justify-content-center w-100">
       <div class="col-12 col-xl-9">
-        <div class="embed-responsive embed-responsive-16by9" style="height: auto">
+        <div class="embed-responsive embed-responsive-16by9" style="height:auto; margin-bottom:-25px;">
           <iframe class="embed-responsive-item" src="./CubismSdkForWeb/Sample/TypeScript/Demo/index.html" scrolling="no"></iframe>
         </div>
 
@@ -76,7 +76,7 @@
       </div>
 
       <div class=".col-xl-3">
-        <ul class="list-group">
+        <ul class="list-group overflow-auto border border-light rounded" style="max-height:580px;">
           <li class="list-group-item">Cras justo odio</li>
           <li class="list-group-item">Dapibus ac facilisis in</li>
           <li class="list-group-item">Morbi leo risus</li>
@@ -95,23 +95,15 @@
 
     <script>
       document.addEventListener('DOMContentLoaded', function() {
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-
         try {
           let app = firebase.app();
           let features = ['auth', 'database', 'messaging', 'storage'].filter(feature => typeof app[feature] === 'function');
-          //document.getElementById('load').innerHTML = `Firebase SDK loaded with ${features.join(', ')}`;
+
+          exports.addMessage = functions.https.onCall((data, context) => {
+            // ...
+          });index.js
         } catch (e) {
           console.error(e);
-          //document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
         }
       });
     </script>
