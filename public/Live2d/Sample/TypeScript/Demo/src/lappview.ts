@@ -29,7 +29,7 @@ export class LAppView
     {
         this._programId = null;
         this._back = null;
-        this._gear = null;
+        // this._gear = null;
 
         // タッチ関係のイベント管理
         this._touchManager = new TouchManager();
@@ -84,8 +84,8 @@ export class LAppView
         this._touchManager = null;
         this._deviceToScreen = null;
 
-        this._gear.release();
-        this._gear = null;
+        // this._gear.release();
+        // this._gear = null;
 
         this._back.release();
         this._back = null;
@@ -105,10 +105,10 @@ export class LAppView
         {
             this._back.render(this._programId);
         }
-        if(this._gear)
-        {
-            this._gear.render(this._programId);
-        }
+        // if(this._gear)
+        // {
+        //     this._gear.render(this._programId);
+        // }
 
         gl.flush();
 
@@ -154,7 +154,7 @@ export class LAppView
             let y = height - textureInfo.height * 0.5;
             let fwidth = textureInfo.width;
             let fheight = textureInfo.height;
-            this._gear = new LAppSprite(x, y, fwidth, fheight, textureInfo.id);
+            // this._gear = new LAppSprite(x, y, fwidth, fheight, textureInfo.id);
         };
 
         textureManager.createTextureFromPngFile(resourcesPath + imageName, false, initGearTexture);
@@ -218,10 +218,10 @@ export class LAppView
             live2DManager.onTap(x, y);
 
             // 歯車にタップしたか
-            if(this._gear.isHit(pointX, pointY))
-            {
-                live2DManager.nextScene();
-            }
+            // if(this._gear.isHit(pointX, pointY))
+            // {
+            //     live2DManager.nextScene();
+            // }
         }
     }
 
@@ -271,7 +271,7 @@ export class LAppView
     _viewMatrix: Csm_CubismViewMatrix;      // viewMatrix
     _programId: WebGLProgram;               // シェーダID
     _back: LAppSprite;                      // 背景画像
-    _gear: LAppSprite;                      // ギア画像
+    // _gear: LAppSprite;                      // ギア画像
     _changeModel: boolean;                  // モデル切り替えフラグ
     _isClick: boolean;                      // クリック中
 }

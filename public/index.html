@@ -64,7 +64,7 @@
     <div class="row justify-content-center w-100">
       <div class="col-12 col-xl-9">
         <div class="embed-responsive embed-responsive-16by9" style="height:auto; margin-bottom:-25px;">
-          <iframe class="embed-responsive-item" src="./CubismSdkForWeb/Sample/TypeScript/Demo/index.html" scrolling="no"></iframe>
+          <iframe class="embed-responsive-item" src="./Live2d/Sample/TypeScript/Demo/index.html" scrolling="no"></iframe>
         </div>
 
         <div class="input-group">
@@ -98,10 +98,6 @@
         try {
           let app = firebase.app();
           let features = ['auth', 'database', 'messaging', 'storage'].filter(feature => typeof app[feature] === 'function');
-
-          exports.addMessage = functions.https.onCall((data, context) => {
-            // ...
-          });index.js
         } catch (e) {
           console.error(e);
         }

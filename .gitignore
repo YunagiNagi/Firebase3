@@ -64,3 +64,7 @@ node_modules/
 
 # dotenv environment variables file
 .env
+
+# live2d
+public/Live2d/*.*
+public/Live2d/node_modules
