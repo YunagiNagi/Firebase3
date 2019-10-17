@@ -1,0 +1,12 @@
+body {
+    background-color: #fcfcfc;
+}
+
+#main {
+    height: auto;
+    margin-bottom: -25px;
+}
+
+#chatList ul {
+    max-height: 570px;
+}
