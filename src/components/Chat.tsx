@@ -1,6 +1,7 @@
 import * as React from "react";
 import { string } from "prop-types";
 
+import { XHR } from "../lib/XHR";
 export interface ChatProps {
   compiler: string;
   framework: string;
@@ -23,7 +24,8 @@ export class Chat extends React.Component<ChatProps, ChatState> {
   }
 
   handleClick(event :React.MouseEvent<HTMLButtonElement>) {
-    alert('input : ' + this.state.value);
+    const xhr = new XHR();
+    xhr.get(`https://us-central1-yunagilab.cloudfunctions.net/helloWorld?text=${this.state.value}`);
     event.preventDefault();
   };
 
@@ -33,8 +35,8 @@ export class Chat extends React.Component<ChatProps, ChatState> {
         <input
           type="text"
           className="form-control"
-          placeholder="Recipient's username"
-          aria-label="Recipient's username"
+          placeholder="chat"
+          aria-label="chat"
           aria-describedby="button-addon2"
           value={this.state.value}
           onChange={this.handleChange}
