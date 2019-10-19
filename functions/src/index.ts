@@ -12,6 +12,10 @@ const dialogflowConfig = require("../dialogflowConfig.json");
 
 export const helloWorld = functions.https.onRequest(
   async (request, response) => {
+    response.set('Access-Control-Allow-Origin', 'https://yunagilab.firebaseapp.com');
+    response.set('Access-Control-Allow-Methods', 'GET, HEAD, OPTIONS, POST');
+    response.set('Access-Control-Allow-Headers', 'Content-Type, authorization');
+
     const original = request.query.text;
     if (!original) {
       response.status(400).send();
@@ -23,12 +27,14 @@ export const helloWorld = functions.https.onRequest(
       dialogflowConfig.developerAccessToken,
       original
     );
+
     await requestModule.post(options.getOptions(),
       async function(error :any, res :any, body :any) {
         if (error) {
           response.status(500).send(error);
           return;
         }
+        
         if (!res || res.statusCode != 200) {
           console.log(JSON.stringify(res));
           response.status(500).send();
@@ -36,7 +42,9 @@ export const helloWorld = functions.https.onRequest(
         }
 
         const answer = body.result.fulfillment.speech;
-        await admin.database().ref('/messages').push({question: original, answer: answer});
+        await admin.database().ref('/messages').push(
+          {question: original, answer: answer}
+        );
         response.status(200).send(answer);
       }
     );
