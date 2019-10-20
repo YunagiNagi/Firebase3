@@ -68,3 +68,6 @@ node_modules/
 # live2d
 public/Live2d/*.*
 public/Live2d/node_modules
+
+# live3d
+public/Live3d/models

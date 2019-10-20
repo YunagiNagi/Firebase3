@@ -4,7 +4,7 @@ import * as ReactDOM from "react-dom";
 import { Root } from "./components/Root";
 import { Nav } from "./components/Nav";
 import { Row } from "./components/Row";
-import { Main } from "./components/Main";
+import { Main3D } from "./components/Main3D";
 import { Chat } from "./components/Chat";
 import { ChatList } from "./components/ChatList";
 
@@ -24,7 +24,7 @@ ReactDOM.render(
 );
 
 ReactDOM.render(
-    <Main compiler="TypeScript" framework="React" />,
+    <Main3D compiler="TypeScript" framework="React" />,
     document.getElementById("main")
 );
 

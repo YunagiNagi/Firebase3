@@ -3,8 +3,10 @@ body {
 }
 
 #main {
+    /*
     height: auto;
     margin-bottom: -25px;
+    */
 }
 
 #chatList ul {
