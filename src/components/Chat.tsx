@@ -35,8 +35,8 @@ export class Chat extends React.Component<ChatProps, ChatState> {
         <input
           type="text"
           className="form-control"
-          placeholder="chat"
-          aria-label="chat"
+          placeholder="Send Chat"
+          aria-label="Send Chat"
           aria-describedby="button-addon2"
           value={this.state.value}
           onChange={this.handleChange}

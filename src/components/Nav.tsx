@@ -8,7 +8,7 @@ export class Nav extends React.Component<NavProps, {}> {
   render() {
     return (
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
-        <a className="navbar-brand" href="#">Navbar</a>
+        <a className="navbar-brand" href="#">YunagiLab</a>
         <NavButton />
         <NavContent />
       </nav>
@@ -40,6 +40,7 @@ function NavContent() {
         <NavItem2 />
         <NavItem3 />
         <NavItem4 />
+        <NavItem5 />
       </ul>
       <NavForm />
     </div>
@@ -62,14 +63,24 @@ function NavItem1() {
 function NavItem2() {
   return (
     <li className="nav-item">
-      <a className="nav-link" href="#">
-        Link
+      <a className="nav-link" href="/index.html">
+        Live2D
       </a>
     </li>
   );
 }
 
 function NavItem3() {
+  return (
+    <li className="nav-item">
+      <a className="nav-link" href="/index.html">
+        Live3D
+      </a>
+    </li>
+  );
+}
+
+function NavItem4() {
   return (
     <li className="nav-item dropdown">
       <a className="nav-link dropdown-toggle"
@@ -92,7 +103,7 @@ function NavItem3() {
   );
 }
 
-function NavItem4() {
+function NavItem5() {
   return (
     <li className="nav-item">
       <a className="nav-link disabled" href="#">
